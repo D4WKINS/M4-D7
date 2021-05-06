@@ -5,11 +5,11 @@ class DishComments extends Component {
     render() {
         return (
                 <>
-                <div className={`mt-${this.marginTop}`}>
-        <h2>Comments for {this.dish}</h2>
+                <div className={`mt-${this.props.marginTop}`}>
+        <h2>Comments for {this.props.dish.name}</h2>
         <ListGroup>
             {
-                this.dish.comments.map(c => (
+                this.props.dish.comments.map(c => (
                     <ListGroup.Item key={c.id}>"{c.comment}" from {c.author}</ListGroup.Item>
                 ))
             }

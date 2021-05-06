@@ -18,10 +18,11 @@ class ReservationForm extends React.Component {
             name: '',
             phone: '',
             numberOfPersons: 1,
-            smoking: false,
+            smoking: false, 
             dateTime: '',
-            specialRequests: '',
+            specialRequests: '' 
         }
+        showForm:false
     }
 
     submitReservation = async (e) => {
@@ -94,12 +95,16 @@ class ReservationForm extends React.Component {
     // user.propertyToAccess // undefined
     // user[propertyToAccess] // 'Teacher'
 
+    toggleForm = () =>{
+        this.stateState({showForm: !this.state.showForm})
+    }
+
     render() {
         console.log('RESERVATIONFORM GOT RE-RENDERED')
         return (
             // React Fragment, just for wrap multiple elements out of my return statement
             <>
-                <h2>Book your table NOW!</h2>
+                <h2 onClick={this.toggleForm}>Book your table NOW!</h2>
                 <Form onSubmit={this.submitReservation}>
                     <Form.Group>
                         <Form.Label>Name</Form.Label>
